@@ -3,7 +3,7 @@
   "files": [
     "dist"
   ],
-  "version": "0.3.0",
+  "version": "0.3.1",
   "type": "module",
   "types": "dist/index.d.ts",
   "source": "src/index.ts",
