@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { select, pointer } from "d3";
+import { select, pointer, pointers } from "d3";
 
 type Props = {
   useId: string;
@@ -25,12 +25,17 @@ export default function Magnifier({
       .on("mouseenter", function (e) {
         setIsActive(true);
       })
-      .on("mouseleave", function (e) {
+      .on("mouseleave touchend", function (e) {
         setIsActive(false);
       })
       .on("mousemove", function (e: any) {
         const coords = pointer(e, useEl);
         setCoords(coords);
+      })
+      .on("touchmove", function (e: any) {
+        const [coords] = pointers(e, useEl);
+        setCoords(coords);
+        setIsActive(true);
       });
   }, [useId, svgId]);
 
