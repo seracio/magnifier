@@ -22,6 +22,7 @@ export default function Magnifier({
   useEffect(() => {
     const useEl = document.querySelector("#" + svgId);
     select(useEl)
+      .on("mouseenter mouseleave touchend mousemove touchmove", null)
       .on("mouseenter", function (e) {
         setIsActive(true);
       })
