@@ -25,20 +25,9 @@ function App() {
   }, []);
 
   return (
-    <div
-      className="App"
-      style={{
-        position: "relative",
-        maxWidth: "700px",
-        margin: "0 auto",
-      }}
-    >
+    <div className="App">
       <h1>A magnifier test</h1>
-      <form
-        style={{
-          userSelect: "none",
-        }}
-      >
+      <form>
         <fieldset>
           <label htmlFor="zoom">Zoom:</label>
           <input
