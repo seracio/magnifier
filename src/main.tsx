@@ -2,13 +2,7 @@ import "./styles.css";
 import Magnifier from "./Magnifier";
 import { StrictMode, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
-import {
-  interpolateSinebow,
-  quantize,
-  randomNormal,
-  randomUniform,
-  schemeBlues,
-} from "d3";
+import { interpolateSinebow, quantize, randomNormal } from "d3";
 
 function App() {
   const [zoom, setZoom] = useState(4);
@@ -40,7 +34,11 @@ function App() {
       }}
     >
       <h1>A magnifier test</h1>
-      <form>
+      <form
+        style={{
+          userSelect: "none",
+        }}
+      >
         <fieldset>
           <label htmlFor="zoom">Zoom:</label>
           <input
