@@ -42,4 +42,5 @@ import { Magnifier } from "@seracio/magnifier";
 </svg>;
 ```
 
-The magnifier follows the cursor or and displays a circle around it.
+The magnifier follows the cursor or and displays a circle around it. Basically, it will replicate the element(s) provided by the `useId` prop thanks to an [`use` element](https://developer.mozilla.org/fr/docs/Web/SVG/Element/use), encapsulated in an svg (placed inside the given svg).  
+The zoom will be managed by the `viewBox` attribute of the inner svg.
