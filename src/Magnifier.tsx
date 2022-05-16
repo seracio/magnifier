@@ -22,7 +22,7 @@ export default function Magnifier({
   useEffect(() => {
     const useEl = document.querySelector("#" + svgId);
     select(useEl)
-      .on("mouseenter mouseleave touchend mousemove touchmove", null)
+      .on("mouseenter mouseleave touchstart touchend mousemove touchmove", null)
       .on("mouseenter", function (e) {
         setIsActive(true);
       })
@@ -33,7 +33,7 @@ export default function Magnifier({
         const coords = pointer(e, useEl);
         setCoords(coords);
       })
-      .on("touchmove", function (e: any) {
+      .on("touchstart touchmove", function (e: any) {
         const [coords] = pointers(e, useEl);
         setCoords(coords);
         setIsActive(true);
